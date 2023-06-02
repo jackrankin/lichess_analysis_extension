@@ -1,0 +1,12 @@
+{
+    "name" : "lichess game analysis",
+    "version" : "1.0.0",
+    "description" : "export games from chesscom to lichess",
+    "manifest_version" : 3,
+    "author" : "Jack Rankin",
+    "action" : {
+        "default_popup" : "test.html",
+        "default_title" : "lichess game analysis"
+    }
+
+}
