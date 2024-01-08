@@ -10,18 +10,14 @@ async function exportGame() {
     const res = await fetch(base_url); 
     let records = await res.json();
 
+    // we have to do some logic to get rid of the extra pgn information that chess.com adds (this is why we hate you chess.com)
     let s = records.games[records.games.length-1].pgn.replace(/\{.*?\}/g, '');
     s = s.replace(/\[.*?\]/g, '');
     s = s.replace(/\s/g, '');
     
-    console.log(s);
-
-    
-    const pgn_url = "https://lichess.org/analysis/pgn/"+s
-    
+    const pgn_url = "https://lichess.org/analysis/pgn/" + s
 
     open(pgn_url, target="_blank")
-
 }
 
 
